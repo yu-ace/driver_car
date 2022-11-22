@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>userList</title>
+</head>
+
+<div id="container" style="width:1800px">
+
+    <div id="header" style="background-color:#33CCCC;">
+        <h1 style="margin-bottom:0;text-align:center">欢迎来到驾校管理系统</h1></div>
+
+    <div id="menu" style="background-color:#D0D0D0;height:1000px;width:200px;float:left;">
+        <b></b><br>
+        <ul>
+            学生管理
+            <li><a href="/new">新生信息注册</a>
+
+            <li><a href="/studentList">查看学生列表</a> </li>
+        </ul>
+        <ul>
+            成绩管理
+            <li><a href="/add">录入学生成绩</a></li>
+            <li><a href="/examRecords">考试记录</a></li>
+            <li><a href="/studentGradeList">学生成绩列表</a></li>
+        </ul>
+        <ul>
+            系统管理
+            <li><a href="/userList">用户列表</a> </li>
+            <li><a href="/addUser">添加用户</a> </li>
+            <li><a href="/delete">删除用户</a> </li>
+            <li><a href="/changePassword">更改密码</a></li>
+            <li><a href="/login">退出系统</a></li>
+        </ul>
+    </div>
+
+    <div id="content" style="background-color:#E0FFFF;height:1000px;width:1600px;float:left;">
+        <p>用户列表</p>
+        <table border="1">
+            <tr>
+                <th>id</th>
+                <th>姓名</th>
+            </tr>
+
+            <tr th:each="m:${userList}">
+                <td th:text="${m.id}"></td>
+                <td th:text="${m.name}"></td>
+            </tr>
+
+        </table>
+    </div>
+
+        <div id="footer" style="background-color:#CCFFCC;clear:both;text-align:center;">
+            版权 你不可以动哦</div>
+</div>
+</html>
+
